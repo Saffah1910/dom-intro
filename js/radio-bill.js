@@ -17,8 +17,8 @@ let smsTotalTwoElem = document.querySelector('.smsTotalTwo');
 let totalTwoElem = document.querySelector('.totalTwo');
 
 
-var callsTotal = 0;
-var smsTotal = 0;
+var totalCall = 0;
+var totalSms = 0;
 
 function textBillTotal() {
 
@@ -27,17 +27,17 @@ function textBillTotal() {
         var billItemType = checkedRadioBtn.value
 
         if (billItemType === "call") {
-            callsTotal += 2.75
+            totalCall += 2.75
         }
         else if (billItemType === "sms") {
-            smsTotal += 0.75;
+            totalSms += 0.75;
         }
     }
 
-    console.log(callsTotal, smsTotal)
-    callTotalTwoElem.innerHTML = callsTotal.toFixed(2);
-    smsTotalTwoElem.innerHTML = smsTotal.toFixed(2);
-    var totalCost = callsTotal + smsTotal;
+    console.log(callsTotal, totalSms)
+    callTotalTwoElem.innerHTML = totalCall.toFixed(2);
+    smsTotalTwoElem.innerHTML = totalSms.toFixed(2);
+    var totalCost = totalCall + totalSms;
     totalTwoElem.innerHTML = totalCost.toFixed(2);
 
     if (totalCost >= 50) {

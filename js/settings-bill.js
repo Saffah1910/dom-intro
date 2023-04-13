@@ -21,11 +21,32 @@
 // * display the latest total on the screen.
 // * check the value thresholds and display the total value in the right color.
 
-let billItemTypeRadioElem = document.querySelector('.billItemTypeWithSettings');
-let radioBillAddBtnElem = document.querySelector('.button-primary');
-let callTotalTwoElem = document.querySelector('.callTotalSettings');
-let smsTotalTwoElem = document.querySelector('.smsTotalSettings');
-let totalTwoElem = document.querySelector('.totalSettings');
+let billItemSettingsElem = document.querySelector('.billItemTypeWithSettings');
+let buttonPrimaryElem = document.querySelector('.button-primary');
+let callTotalSettingsElem = document.querySelector('.callTotalSettings');
+let smsTotalSettingsElem = document.querySelector('.smsTotalSettings');
+let totalSettingsElem = document.querySelector('.totalSettings');
+let callCostElem = document.querySelector('.callCostSetting');
+let smsCostElem = document.querySelector('.smsCostSetting');
+let warningLevelElem = document.querySelector('.warningLevelSetting');
+let criticalLevelElem = document.querySelector('.criticalLevelSetting');
+let updateBtnElem = document.querySelector('.updateSettings');
+
+
+
+
+
+updateBtnElem.addEventListener("click", function(){
+    alert("Hi!");
+});
+
+
+// radioBillAddBtnElem.addEventListener("click", function(){
+//     alert("Hi!");
+// });
+
+
+
 
 
 var callsTotal = 0;
@@ -51,12 +72,16 @@ function textBillTotal() {
     var totalCost = callsTotal + smsTotal;
     totalTwoElem.innerHTML = totalCost.toFixed(2);
 
-    if (totalCost >= 50) {
+    // if (totalCost >= 50) {
 
-        totalTwoElem.classList.add("danger");
-    }
-    else if (totalCost >= 30) {
-        totalTwoElem.classList.add("warning");
-    }
+    //     totalTwoElem.classList.add("danger");
+    // }
+    // else if (totalCost >= 30) {
+    //     totalTwoElem.classList.add("warning");
+    // }
 }
-radioBillAddBtnElem.addEventListener('click', textBillTotal);
+// console.log(radioBillAddBtnElem);
+// radioBillAddBtnElem.addEventListener('click', textBillTotal);
+
+
+
