@@ -39,6 +39,8 @@ updateBtnElem.addEventListener("click", function(){
     smsCost = parseFloat(smsCostElem.value);
     warningLevel = parseFloat(warningLevelElem.value) ;
     criticalLevel = parseFloat(criticalLevelElem.value) ;
+    document.querySelector(".addBtnSettings").disabled = false;
+
 });
 
 
@@ -56,7 +58,10 @@ function phoneTotal() {
         }
         else if (billItemType === "sms") {
             total_sms  += smsCost;
+        
         }
+       
+    
     }
     callTotalSettingsElem.innerHTML = total_call.toFixed(2);
     smsTotalSettingsElem.innerHTML = total_sms.toFixed(2);
@@ -74,6 +79,7 @@ function phoneTotal() {
     if (total_cost >= criticalLevel) {
         totalSettingsElem.classList.remove("warning");
         totalSettingsElem.classList.add("danger");
+        document.querySelector(".addBtnSettings").disabled = true;
     }
 
  

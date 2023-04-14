@@ -22,13 +22,13 @@ var smsTotal = 0;
 function textBillTotal(){
   // let bill = billTypeEntered.value; 
 
+    let bill = billTypeEntered.value.toLowerCase();
+//   var bill = billTypeEntered.value.trim();
    
-  var bill = billTypeEntered.value.trim();
-   
-    if (bill === "call"){
+    if (bill.trim() === "call"){
         callsTotal += 2.75
     }
-    else if (bill === "sms"){
+    else if (bill.trim() === "sms"){
         smsTotal += 0.75;
     }
     
