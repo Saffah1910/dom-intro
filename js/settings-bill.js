@@ -31,7 +31,7 @@ var total_cost = 0;
 //add an event listener for when the 'Update settings' button is pressed
 updateBtnElem.addEventListener("click", function () {
 
-// * add nothing for invalid values that is not 'call' or 'sms'.
+    // * add nothing for invalid values that is not 'call' or 'sms'.
 
     callCost = parseFloat(callCostElem.value);
     smsCost = parseFloat(smsCostElem.value);
@@ -39,6 +39,7 @@ updateBtnElem.addEventListener("click", function () {
     criticalLevel = parseFloat(criticalLevelElem.value);
     addClass()
 });
+
 
 //add an event listener for when the add button is pressed
 function phoneTotal() {
@@ -56,6 +57,7 @@ function phoneTotal() {
             }
         }
     }
+
     callTotalSettingsElem.innerHTML = total_call.toFixed(2);
     smsTotalSettingsElem.innerHTML = total_sms.toFixed(2);
     // * add the appropriate value to the overall total
@@ -64,17 +66,19 @@ function phoneTotal() {
     totalSettingsElem.innerHTML = total_cost.toFixed(2);
     addClass()
 }
-function addClass(){
+function addClass() {
     totalSettingsElem.classList.remove("danger");
     totalSettingsElem.classList.remove("warning");
-// * check the value thresholds and display the total value in the right color.
-    if (total_cost >= warningLevel) {
-        totalSettingsElem.classList.remove("danger");
-        totalSettingsElem.classList.add("warning");
-    }
-    if (total_cost >= criticalLevel) {
-        totalSettingsElem.classList.remove("warning");
-        totalSettingsElem.classList.add("danger");
+    // * check the value thresholds and display the total value in the right color.
+    if (warningLevel > 0 && criticalLevel > 0) {
+        if (total_cost >= warningLevel) {
+            totalSettingsElem.classList.remove("danger");
+            totalSettingsElem.classList.add("warning");
+        }
+        if (total_cost >= criticalLevel) {
+            totalSettingsElem.classList.remove("warning");
+            totalSettingsElem.classList.add("danger");
+        }
     }
 }
 
