@@ -33,8 +33,9 @@ updateBtnElem.addEventListener("click", function () {
 
     // * add nothing for invalid values that is not 'call' or 'sms'.
 
-    callCost = parseFloat(callCostElem.value);
-    smsCost = parseFloat(smsCostElem.value);
+    // callCost = parseFloat(callCostElem.value);
+    callCost = callCostElem.value;
+    smsCost = smsCostElem.value;
     warningLevel = parseFloat(warningLevelElem.value);
     criticalLevel = parseFloat(criticalLevelElem.value);
     addClass()
@@ -50,10 +51,10 @@ function phoneTotal() {
         if (total_cost < criticalLevel) {
             // * add the appropriate value to the call / sms total
             if (billItemType === "call") {
-                total_call += callCost;
+                total_call += Number(callCost);
             }
             else if (billItemType === "sms") {
-                total_sms += smsCost;
+                total_sms += Number(smsCost);
             }
         }
     }
