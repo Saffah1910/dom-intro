@@ -19,6 +19,7 @@ let totalCostElem = document.querySelector('.totalOne');
 
 var callsTotal = 0;
 var smsTotal = 0;
+
 function textBillTotal(){
   // let bill = billTypeEntered.value; 
 
