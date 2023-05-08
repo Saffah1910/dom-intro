@@ -1,5 +1,5 @@
 
-describe("Calculate bill function" , function(){
+   describe("Calculate bill function" , function(){
     it("should return 5.50 if 2 calls were made",function(){
      
         var calculateBills =  CalculateBill("call,CALL");
@@ -30,3 +30,35 @@ describe("Calculate bill function" , function(){
 
 })
 
+// describe("Calculate bill function" , function(){
+// it('should be able to calculate call and sms totals', function() {
+//     var calculator = phoneBillCalculator();
+//     calculator.calculateBill('call, sms, call, sms, call');
+    
+    
+ 
+//     assert.equal(5, calculator.totalCalls());
+//     assert.equal(3, calculator.totalSMS());
+//     assert.equal(12.50, calculator.totalCost());
+//     });
+    
+//     it('should be able to return the correct total cost for calls only', function() {
+//     var calculator = phoneBillCalculator();
+//     calculator.calculateBill('call, call, call');
+    
+  
+//     assert.equal(3, calculator.totalCalls());
+//     assert.equal(0, calculator.totalSMS());
+//     assert.equal(8.25, calculator.totalCost());
+//     });
+    
+//     it('should be able to return the correct total cost for sms only', function() {
+//     var calculator = phoneBillCalculator();
+//     calculator.calculateBill('sms, sms, sms');
+   
+//     assert.equal(0, calculator.totalCalls());
+//     assert.equal(3, calculator.totalSMS());
+//     assert.equal(2.25, calculator.totalCost());
+//     });
+    
+//     });
