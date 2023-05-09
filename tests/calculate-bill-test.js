@@ -1,9 +1,10 @@
 
    describe("Calculate bill function" , function(){
     it("should return 5.50 if 2 calls were made",function(){
-     
-        var calculateBills =  CalculateBill("call,CALL");
-        assert.equal(5.50,calculateBills.calcBill())
+        var calculateBills =  CalculateBill();
+        calculateBills.setcalcBill("call,call");
+
+        assert.equal(5.50,calculateBills.getcalcBill())
     });
 
     it("should return R3.00 if 4 sms's were made",function(){

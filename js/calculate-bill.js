@@ -17,47 +17,60 @@ let billTotal = document.querySelector(".billTotal");
 
 let billString = document.querySelector(".billString");
 
+
+
+
 function totalPhoneBill() {
 
     let bill = billString.value.toLowerCase();
 
-    //var bill = bill1.value.trim();
+    //var bill = bill1.value.trim();0
 
-    var phoneBill = bill.split(",");
+    // var phoneBill = bill.split(",");
 
-    var total = 0;
-    for (var i = 0; i < phoneBill.length; i++) {
-        if (phoneBill[i].trim() === "call") {
-            total += 2.75;
-        }
-        else if (phoneBill[i].trim() === "sms") {
-            total += 0.75;
-        }
-        billTotal.classList.remove("danger")
-        billTotal.classList.remove("warning");
-
-
-
-        if (total >= 20 && total < 30) {
-            billTotal.classList.remove("danger")
-            billTotal.classList.add("warning");
+    // var total = 0;
+    // for (var i = 0; i < phoneBill.length; i++) {
+    //     if (phoneBill[i].trim() === "call") {
+    //         total += 2.75;
+    //     }
+    //     else if (phoneBill[i].trim() === "sms") {
+    //         total += 0.75;
+    //     }
+    //     billTotal.classList.remove("danger")
+    //     billTotal.classList.remove("warning");
 
 
-        }
 
-        if (total >= 30) {
-            billTotal.classList.remove("warning")
-            billTotal.classList.add("danger");
+    //     if (total >= 20 && total < 30) {
+    //         billTotal.classList.remove("danger")
+    //         billTotal.classList.add("warning");
 
-        }
+
+    //     }
+
+    //     if (total >= 30) {
+    //         billTotal.classList.remove("warning")
+    //         billTotal.classList.add("danger");
+
+    //     }
+    var calcTotal = CalculateBill();
+
+    calcTotal.setcalcBill(bill);
+
+billTotal.innerHTML = calcTotal.getcalcBill();
+
+billTotal.classList.add(calcTotal.warningLevel());
+
+billTotal.classList.add(calcTotal.criticalLevel());
 
 
 
     }
 
 
-    billTotal.innerHTML = total.toFixed(2);;
-}
+
+
+
 
 calcBtn.addEventListener('click', totalPhoneBill);
 

@@ -1,11 +1,11 @@
-function CalculateBill(billString) {
+function CalculateBill() {
 
     var total = 0;
 
-    function calcBill() {
+    function setcalcBill(amount) {
 
 
-        var phoneBill = billString.split(",");
+        var phoneBill = amount.split(",");
 
         for (var i = 0; i < phoneBill.length; i++) {
             if (phoneBill[i].trim().toLowerCase() === "call") {
@@ -15,6 +15,9 @@ function CalculateBill(billString) {
                 total += 0.75;
             }
         }
+      
+    }
+    function getcalcBill(){
         return total;
     }
 
@@ -25,15 +28,15 @@ function CalculateBill(billString) {
     }
     function criticalLevel() {
         if (total > 30) {
-            return "critical"
+            return "danger"
         }
     }
     return {
-        calcBill,
+        setcalcBill,
+        getcalcBill,
         warningLevel,
         criticalLevel
 
     }
-
 }
 
