@@ -18,11 +18,12 @@ function CalculateBill() {
       
     }
     function getcalcBill(){
-        return total;
+        return total.toFixed(2);
     }
 
     function warningLevel() {
         if (total > 20 && total < 30) {
+
             return "warning"
         }
     }

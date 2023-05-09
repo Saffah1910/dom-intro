@@ -60,6 +60,8 @@ function totalPhoneBill() {
 billTotal.innerHTML = calcTotal.getcalcBill();
 
 billTotal.classList.add(calcTotal.warningLevel());
+// billTotal.classList.remove(calcTotal.warningLevel());
+
 
 billTotal.classList.add(calcTotal.criticalLevel());
 
