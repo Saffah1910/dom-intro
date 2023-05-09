@@ -15,28 +15,54 @@ function CalculateBill() {
                 total += 0.75;
             }
         }
-      
+
     }
-    function getcalcBill(){
+
+
+    function getcalcBill() {
         return total.toFixed(2);
     }
 
+
+    function criticalLevel() {
+        if (getcalcBill() > 30) {
+            return "danger"
+        }
+
+    }
+
     function warningLevel() {
-        if (total > 20 && total < 30) {
+        if (getcalcBill() > 20) {
 
             return "warning"
         }
+
     }
-    function criticalLevel() {
-        if (total > 30) {
-            return "danger"
+
+
+
+    function removeTheColors1() {
+
+        if (getcalcBill() < 30) {
+            return "danger";
         }
     }
+    function removeTheColors2() {
+
+        if (getcalcBill() < 20) {
+            return "warning";
+        }
+    }
+
+
+
     return {
         setcalcBill,
         getcalcBill,
         warningLevel,
-        criticalLevel
+        criticalLevel,
+        removeTheColors1,
+        removeTheColors2
 
     }
 }
